@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario 2</title>
+    <style> body {font-family: Arial, Helvetica, sans-serif}</style>
 </head>
 <body>
     <form action="">
@@ -15,7 +16,25 @@
         <input type="radio" name="lenguaje" value="lenguajehtml">HTML <br>
         <input type="radio" name="lenguaje" value="lenguajevisual_basic">Visual Basic <br><br>
         <label for="">Elija un fichero:</label><input type="file" name="file"><br>
-        <label for="">Elija una fecha:</label><input type="date" name="date">
+        <label for="">Elija una fecha:</label><input type="date" name="date"><br>
+        <label for="">Elija un color</label><input type="color" name="color">
+
+    </fieldset>
+    <fieldset><legend>Rellene las opciones siguientes</legend>
+    <input type="checkbox" name="procesador1" value="procesadorintel"><label for="">Intel</label><br>
+    <input type="checkbox" name="procesador1" value="procesadoramd"><label for="">AMD</label><br><br>
+    <label for="">Elija una hora:</label><input type="date" name="date2"><br>
+    <label for="">Elija un fichero</label><input type="file" name="file2"><br><br>
+    <input type="radio" name="procesador2" value="procesadoramd"><label for="">AMD</label>
+    <input type="radio" name="procesador2" value="procesadorintel_i5"><label for="">Intel i5</label>
+    <input type="radio" name="procesador2" value="procesadorintel_i7"><label for="">Intel i7</label><br>
+    <textarea name="areadetexto" id="" cols="55" rows="4" placeholder="Utilice este cuadro para escribir"></textarea><br>
+    <label for="">DNI</label><br><input type="text" name="dni"><br>
+    <label for="">Nombre</label><br><input type="text" name="nombre"><br>
+    <label for="">Apellidos</label><br><input type="text" name="apellidos"><br>
+    <label for="">Teléfono</label><br><input type="text" name="telefono"><br><br>
+    <label for="">Elija un color</label><input type="color" name="color2">
+
 
     </fieldset>    
     </form>
