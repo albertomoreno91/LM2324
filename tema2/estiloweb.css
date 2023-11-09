@@ -1,3 +1,11 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 .publi1 {
     position: relative;
 }
@@ -18,12 +26,12 @@
 }
 
 .texto {
+    padding: 20px;
     background-color: pink;
     width: 70%;
     float: left;
     height: 800px;
     overflow: scroll;
-    overflow: auto;
 }
 
 img {
