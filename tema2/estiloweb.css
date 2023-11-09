@@ -37,6 +37,8 @@ body {
     overflow: scroll;
 }
 
+.sombra {font-size: 200%; text-shadow: 6px 6px 2px #E610FB;}
+
 #ainsley {
     float: left;
     margin: 20px;
