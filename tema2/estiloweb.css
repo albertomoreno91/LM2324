@@ -1,5 +1,18 @@
 .publi1 {
     border: 2px solid red;
+}
+
+.publi2 {
+    border: 2px solid blue;
+    float: right;
+    height: 800px;
+    width: 300px;
     text-align: center;
 }
-.publi2 {border: 2px solid blue; float: left;}
+
+.indice {
+    border: 2px solid green;
+    float: left;
+    width: 300px;
+    height: 800px;
+}
