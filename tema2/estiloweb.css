@@ -34,7 +34,4 @@ body {
     overflow: scroll;
 }
 
-img {
-    width: 100%;
-    height: auto;
-}
+#ainsley {float: right;}
