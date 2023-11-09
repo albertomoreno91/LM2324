@@ -26,6 +26,9 @@ body {
 }
 
 .texto {
+    text-transform: capitalize;
+    line-height: 1.8;
+    text-indent: 40px;
     padding: 30px;
     background-color: pink;
     width: 70%;
@@ -34,4 +37,12 @@ body {
     overflow: scroll;
 }
 
-#ainsley {float: right;}
+#ainsley {
+    float: left;
+    margin: 20px;
+}
+
+#alien {
+    float: right;
+    margin: 20px;
+}
