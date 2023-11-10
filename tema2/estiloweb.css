@@ -28,7 +28,7 @@ body {
 .texto {
     text-transform: capitalize;
     line-height: 1.8;
-    text-indent: 40px;
+    text-indent: 20px;
     padding: 30px;
     background-color: pink;
     width: 70%;
