@@ -37,7 +37,7 @@ body {
     overflow: scroll;
 }
 
-.sombra {margin: 20px; font-size: 200%; font-family: 'Permanent Marker', sans-serif; color: black; text-shadow: 6px 6px 2px #E610FB;}
+.sombra {font-size: 200%; font-family: 'Permanent Marker', sans-serif; color: black; text-shadow: 6px 6px 2px #E610FB;}
 
 #ainsley {
     float: left;
