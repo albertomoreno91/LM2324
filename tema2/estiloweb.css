@@ -23,6 +23,21 @@ body {
     float: left;
     width: 15%;
     height: 800px;
+    text-align: center;
+}
+
+a.enlace {
+    font-size: 30px;
+    position: relative;
+    top: ;
+    text-decoration: none;
+}
+
+a.enlace:hover {
+    background-color: red;
+    padding: 5px;
+    color: white;
+    text-shadow: 2px 2px black;
 }
 
 .texto {
