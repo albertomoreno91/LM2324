@@ -37,7 +37,7 @@ body {
     overflow: scroll;
 }
 
-.sombra {font-size: 200%; text-shadow: 6px 6px 2px #E610FB;}
+.sombra {font-size: 200%; font-family: 'Audiowide', sans-serif; color: white; text-shadow: 6px 6px 2px #E610FB;}
 
 #ainsley {
     float: left;
