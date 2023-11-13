@@ -40,7 +40,7 @@ a {text-decoration: none;}
 
 a:hover {
     background-color: red;
-    padding: 5px;
+    padding: 8px;
     color: white;
     text-shadow: 2px 2px black;
 }
