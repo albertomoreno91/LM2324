@@ -1,0 +1,6 @@
+body {
+    background-image: url(Images/bg.jpg);
+    position: fixed;
+}
+
+.header {display: flex; justify-content: center;}
