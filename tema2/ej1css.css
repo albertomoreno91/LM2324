@@ -2,11 +2,21 @@ body {
     background-image: url(Images/bg.jpg);
     background-attachment: fixed;
     font-family: Trebuchet, Geneva, sans-serif;
-    
 }
 
 header {
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: #4c3803;
+    height: 200px;
+    overflow: hidden;
+}
+
+header>div {
+    background-color: #f1f1f1;
+    width: 200px;
+    margin: 20px;
+    text-align: center;
+    line-height: 75px;
 }
