@@ -20,3 +20,11 @@ header>div {
     text-align: center;
     line-height: 75px;
 }
+
+@media screen and (max-width: 600px) {
+    body {
+        background-image: none;
+        background-color: aquamarine;
+        font-family: 'Courier New', Courier, monospace;
+    }
+}
