@@ -6,6 +6,8 @@ body {
     flex-direction: column;
     align-items: center;
     width: 75%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .articulo::first-letter {
@@ -33,8 +35,8 @@ nav {
     display: flex;
     justify-content: space-around;
     background-color: #ebcd7c;
-    width: 100%;
     border-radius: 20px;
+    width: 100%;
 }
 
 nav a {
@@ -62,13 +64,4 @@ aside {
     padding: 10px;
     background-color: #b28306;
     border-radius: 20px;
-}
-
-
-@media screen and (max-width: 600px) {
-    body {
-        background-image: none;
-        background-color: aquamarine;
-        font-family: 'Courier New', Courier, monospace;
-    }
 }
