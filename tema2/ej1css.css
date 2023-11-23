@@ -12,7 +12,7 @@ body {
 
 .articulo::first-letter {
     color: #4c3803;
-    font-size: 160%;
+    font-size: 180%;
     font-weight: bold;
 }
 
@@ -60,8 +60,22 @@ article {
 
 aside {
     width: 25%;
-    float: right;
     padding: 10px;
     background-color: #b28306;
     border-radius: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        flex-direction: column;
+    }
+
+    article {
+        width: 100%;
+    }
+
+    aside {
+        width: 100%;
+    }
+
 }
