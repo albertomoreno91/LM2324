@@ -18,7 +18,18 @@ header {
     overflow: hidden;
 }
 
+article {
+    display: flex;
+    width: 75%;
+    justify-content: center;
+}
+
 .contenedor {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor2 {
     display: flex;
     justify-content: center;
 }
