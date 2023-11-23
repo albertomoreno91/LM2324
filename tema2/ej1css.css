@@ -28,6 +28,26 @@ header {
     overflow: hidden;
 }
 
+nav {
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #ebcd7c;
+    width: 100%;
+    border-radius: 20px;
+}
+
+nav a {
+    margin: 3px;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+    background-color: #4c3803;
+    text-decoration: none;
+    color: #b28306;
+    border-radius: 20px;
+}
+
 main {
     display: flex;
 }
@@ -39,6 +59,9 @@ article {
 aside {
     width: 25%;
     float: right;
+    padding: 10px;
+    background-color: #b28306;
+    border-radius: 20px;
 }
 
 
