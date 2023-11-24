@@ -1,0 +1,91 @@
+html {
+  background-color: lightgrey;
+  font-family: trebuchet, geneva, sans-serif;
+  background: url('images/bg.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover; /* Compatibilidad navegador Safari */
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body {
+  margin: 0;
+}
+p::first-letter {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #4C3803;
+}
+article, aside, footer, header {
+  padding: 1rem;
+  box-sizing: border-box; /* https://www.w3schools.com/css/css3_box-sizing.asp */
+}
+header {
+  background-color: #B28306;
+  color: #4C3803;
+  text-align: center;
+  border-bottom: 1px solid;
+  border-radius: 20px;
+  order:1;
+}
+aside {
+  background-color: #B28306;
+  border-radius: 20px;
+}
+
+nav {
+  display: flex;
+  order: 2;
+  background-color: #EBCD7C;
+  padding: 10px 0;
+  border-radius: 20px;
+}
+nav a {
+  flex: auto;
+  text-align: center;
+  background: #4C3803;
+  color: #B28306;
+  margin: 0 5px;
+  padding: 5px 0;
+  text-decoration: none;
+  border-radius: 20px;
+}
+nav a:hover {
+  outline: 1px solid white;
+  color: white;
+  text-decoration: none;
+}
+a {
+    color: gray;
+    font-weight: bold;
+    text-decoration: none;
+}
+@media screen and (min-width: 560px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    max-width: 75rem;
+    margin: auto;
+  }
+  main {
+    display: flex;
+    order: 2;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    border-bottom: 0.5rem solid;
+  }
+  nav {
+    order: 3;
+  }
+  header {
+    order: 1;
+  }
+  article {
+    flex: 75%;
+  }
+  aside {
+    flex: 25%;
+  }
+  footer {
+    order: 4;
+  }
+}
