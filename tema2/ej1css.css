@@ -10,12 +10,11 @@ body {
     margin-right: auto;
 }
 
-.articulo::first-letter {
+p.articulo::first-letter {
     color: #4c3803;
     font-size: 180%;
     font-weight: bold;
 }
-
 
 header {
     display: flex;
