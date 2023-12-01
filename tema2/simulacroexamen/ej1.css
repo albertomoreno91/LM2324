@@ -31,10 +31,6 @@ main:hover {
     float: left;
 }
 
-#amarillo:hover {
-    cursor: help;
-}
-
 header {
     background-color: #ffd100;
     width: 100%;
@@ -53,12 +49,8 @@ aside {
 }
 
 .nodo {
-    width: 100%;
+    max-width: 100%;
     padding: 10%;
-}
-
-.nodo:hover {
-    cursor: help;
 }
 
 .contenedor {
@@ -83,6 +75,33 @@ footer>p::first-letter {
     font-size: 150%;
 }
 
-#span:hover {
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: unset;
+}
+
+a:hover {
     cursor: help;
+}
+
+@media screen and (max-width: 768px) {
+    .contenedor {
+        display: flex;
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    .nodo {
+        padding: 5%;
+    }
+
+    main {
+        width: 100%;
+    }
 }
