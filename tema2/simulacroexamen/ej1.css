@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
 body {
     font-family: 'Open Sans', Helvetica, sans-serif;
@@ -18,9 +18,14 @@ main {
     margin: auto;
 }
 
-main:hover {background-color: #970043;}
+main:hover {
+    background-color: #970043;
+    color: white;
+}
 
-main > p::first-letter {font-size: 150%;}
+main>p::first-letter {
+    font-size: 150%;
+}
 
 header {
     background-color: #ffd100;
@@ -29,10 +34,29 @@ header {
     justify-content: center;
     align-items: center;
 }
-.nodo {}
 
-aside {display: flex; width: 20%;}
+aside {
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+}
 
-.contenedor {display: flex;}
+.nodo {
+    width: 100%;
+    padding: 10%;
+}
 
-.radius {border-radius: 10px;}
+.nodo:hover {
+    cursor: help;
+}
+
+.contenedor {
+    display: flex;
+}
+
+.slide {
+    margin-top: 10px;
+    border-radius: 10px;
+    max-width: 100%;
+}
