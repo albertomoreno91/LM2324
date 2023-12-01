@@ -6,9 +6,33 @@
 
 body {
     font-family: 'Open Sans', Helvetica, sans-serif;
-    display: flex;
+    background-color: #970043;
 }
 
-main {width: 60%;}
+main {
+    background-color: #f2f2f2;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
 
-header {background-color: #ffd100; color: aqua;}
+main:hover {background-color: #970043;}
+
+main > p::first-letter {font-size: 150%;}
+
+header {
+    background-color: #ffd100;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nodo {}
+
+aside {display: flex; width: 20%;}
+
+.contenedor {display: flex;}
+
+.radius {border-radius: 10px;}
