@@ -25,6 +25,7 @@ main:hover {
 
 .texto>p::first-letter {
     font-size: 150%;
+    font-weight: bold;
 }
 
 #amarillo {
@@ -74,6 +75,7 @@ footer {
 
 footer>p::first-letter {
     font-size: 150%;
+    font-weight: bold;
 }
 
 a {
