@@ -66,3 +66,25 @@ body {
 .bold {
     font-weight: bold;
 }
+
+@media screen and (max-width: 700px) {
+    .item1 {
+        grid-column: 1 / span 2;
+    }
+
+    .item2 {
+        grid-column: 1 / span 2;
+    }
+
+    .item3 {
+        grid-column: 1 / span 2;
+    }
+
+    .item4 {
+        grid-column: 1 / span 2;
+    }
+
+    .contenedor {
+        padding: 0;
+    }
+}
