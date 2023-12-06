@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 2 examen</title>
+    <link rel="stylesheet" href="ej2.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="item1 verde item">
+            <p class="bold">IES Antonio Machado</p>
+            <p>Calle Arroyo 80 <br>41008 Sevilla <br> 41009071@juntadeandalucía.es</p>
+        </div>
+        <form class="item2 item" action="" method="post">
+            <p class="bold">Contacta con nosotros</p>
+            <div class="izq">
+                <label for="nombre">Nombre</label><br>
+                <input type="text" id="nombre" name="nombre" class="input">
+            </div>
+            <div class="der">
+                <label for="apellidos">Apellidos</label><br>
+                <input type="text" id="apellidos" name="apellidos" class="input">
+            </div>
+            <div class="izq centro">
+                <label for="email">Email</label><br>
+                <input type="text" id="email" name="email" class="input">
+            </div>
+            <div class="der centro">
+                <label for="asunto">Asunto</label>
+                <input type="text" id="asunto" name="asunto" class="input">
+            </div>
+        </form>
+        <form action="" method="post" class="item3 item">
+            <label for="textarea">Escribe tu mensaje</label><br>
+            <textarea name="textarea" id="textarea" cols="30" rows="10" class="input"></textarea>
+        </form>
+        <form action="" method="post" class="item4 item">
+            <input type="submit" value="Enviar" class="boton verde">
+        </form>
+    </div>
+</body>
+
+</html>
