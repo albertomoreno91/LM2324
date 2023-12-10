@@ -20,7 +20,7 @@ header {
 
 .common {
     padding: 20px;
-    margin: 20px;
+    margin: 2px;
     color: whitesmoke;
     border: 2px solid whitesmoke;
     border-radius: 10px;
@@ -29,6 +29,7 @@ header {
 main {
     display: flex;
     flex-direction: row;
+    height: 100vh;
 }
 
 nav {
@@ -43,6 +44,7 @@ nav > a {
     color: white;
     text-decoration: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-top: 20px;
 }
 
 nav > a:hover {
