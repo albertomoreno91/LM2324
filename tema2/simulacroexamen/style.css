@@ -29,7 +29,6 @@ header {
 main {
     display: flex;
     flex-direction: row;
-    height: 100vh;
 }
 
 nav {
@@ -39,7 +38,7 @@ nav {
     width: 15em;
 }
 
-nav > a {
+nav>a {
     padding: 0.5em 1em;
     color: white;
     text-decoration: none;
@@ -47,7 +46,7 @@ nav > a {
     margin-top: 20px;
 }
 
-nav > a:hover {
+nav>a:hover {
     cursor: progress;
 }
 
@@ -93,4 +92,14 @@ p::first-letter {
 
 .italic {
     font-style: italic;
+}
+
+@media screen and (max-width: 640px) {
+    main {
+        flex-direction: column;
+    }
+
+    nav {
+        width: auto;
+    }
 }
