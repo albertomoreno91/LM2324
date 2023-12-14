@@ -10,12 +10,12 @@ body {
 form {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     width: 80%;
     position: absolute;
     transform: translate(-50% -50%);
     top: 50%;
-    left: 15%;
-
+    left: 10%
 }
 
 .texto {
