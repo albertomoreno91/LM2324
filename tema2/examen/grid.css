@@ -77,6 +77,11 @@ footer {
     float: right;
 }
 
+.boton:hover {
+    background-color: #0a4d1e;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 760px) {
     main {
         grid-template-columns: 1fr;
