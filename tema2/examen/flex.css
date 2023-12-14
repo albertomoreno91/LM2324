@@ -38,11 +38,11 @@ form {
     box-shadow: 8px 8px 5px rgba(226, 209, 12, 0.35);
 }
 
-input:focus {
+.texto:focus {
     border: 5px solid #3759e2;
 }
 
-input:hover {
+.texto:hover {
     border: 5px solid #3759e2;
 }
 
