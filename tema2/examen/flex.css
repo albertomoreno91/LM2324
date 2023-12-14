@@ -19,7 +19,6 @@ form {
 }
 
 .texto {
-    box-sizing: content-box;
     flex-basis: 300px;
     margin: 10px;
     border: none;
