@@ -1,1 +1,1 @@
-function ocultar(caja1)
+function ocultar(caja1)document.getElementById('caja1').style.visibility
