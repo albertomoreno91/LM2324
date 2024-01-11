@@ -1,0 +1,1 @@
+function ocultar(caja1)
