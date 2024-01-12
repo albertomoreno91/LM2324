@@ -1,9 +1,15 @@
 function ocultarRojo() {
-    document.getElementById('caja1').style.visibility = "hidden"
+    if (document.getElementById('caja1').style.visibility == "visible")
+        document.getElementById('caja1').style.visibility = "hidden"
+    else document.getElementById('caja1').style.visibility = "visible"
 }
 function ocultarVerde() {
-    document.getElementById('caja2').style.visibility = "hidden"
+    if (document.getElementById('caja2').style.visibility == "visible")
+        document.getElementById('caja2').style.visibility = "hidden"
+    else document.getElementById('caja2').style.visibility = "visible"
 }
 function ocultarAzul() {
-    document.getElementById('caja3').style.visibility = "hidden"
+    if (document.getElementById('caja3').style.visibility == "visible")
+        document.getElementById('caja3').style.visibility = "hidden"
+    else document.getElementById('caja3').style.visibility = "visible"
 }
