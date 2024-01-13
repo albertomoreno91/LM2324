@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+</head>
+<body>
+    <h1>Conversor Dólares a Euros</h1>
+    <label for="cant">Cantidad:</label><br>
+    <input type="text" id="cant" placeholder="Introduzca cantidad"><br>
+    <button onclick="convertir('euro')">Convertir a euro</button>
+    <button onclick="convertir('dolares')">Convertir a dólares</button>
+    <p id="result"></p>
+    <script>
+        function convertir() {
+        let a = parseFloat(document.getElementById('cant').value)
+        document.getElementById('result').innerHTML = a * 0.91 + " €"
+        }
+    </script>
+</body>
+</html>
