@@ -34,7 +34,9 @@
             margin: 20px
         }
 
-        button {margin: 20px 33px;}
+        button {
+            margin: 0px 33px;
+        }
     </style>
 </head>
 
@@ -44,9 +46,14 @@
     <div id="caja2"></div>
     <div id="caja3"></div>
     <div style="display: block; clear: both; margin: 20px;">
-        <button onclick="ocultarRojo()">Ocultar</button>
-        <button onclick="ocultarVerde()">Ocultar</button>
-        <button onclick="ocultarAzul()">Ocultar</button>
+        <button onclick="ocultar('caja1')">Ocultar</button>
+        <button onclick="ocultar('caja2')">Ocultar</button>
+        <button onclick="ocultar('caja3')">Ocultar</button>
+    </div>
+    <div style="display: block; clear: both; margin: 20px;">
+        <button onclick="mostrar('caja1')">Mostrar</button>
+        <button onclick="mostrar('caja2')">Mostrar</button>
+        <button onclick="mostrar('caja3')">Mostrar</button>
     </div>
 
 </body>
