@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor Celsius a Fahrenheit</title>
+</head>
+
+<body>
+    <h1>Conversor de Celsius a Fahrenheit</h1>
+    <input type="text" id="grados"><br>
+    <button onclick="conversor()">Convertir</button>
+    <p id="resultado"></p>
+    <script>
+        function conversor() {
+            var a = parseFloat(document.getElementById('grados').value)
+            document.getElementById('resultado').innerHTML = (a * 9 / 5) + 32
+        }
+    </script>
+
+</body>
+
+</html>
