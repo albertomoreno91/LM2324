@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+
+<body>
+    <h1>Métodos de Arrays</h1>
+    <input type="text" id="caja">
+    <button onclick="añadir()">Añadir</button>
+    <button onclick="sustraer()">Sustraer</button>
+    <button onclick="creciente()">Ordenar A-Z</button>
+    <button onclick="decreciente()">Ordenar Z-A</button>
+    <p id="array"></p>
+
+    <script>
+        const cosas = ["Chetos", "Doritos", "Boca Bits", "Gublins", "Fritos"]
+        document.getElementById('array').innerHTML = cosas
+
+        function añadir() {
+            cosas.push(document.getElementById('caja').value)
+            document.getElementById('array').innerHTML = cosas
+        }
+
+        function sustraer() {
+            cosas.pop()
+            document.getElementById('array').innerHTML = cosas
+        }
+
+        function creciente() {
+            cosas.sort()
+            document.getElementById('array').innerHTML = cosas
+        }
+
+        function decreciente() {
+            cosas.sort()
+            cosas.reverse()
+            document.getElementById('array').innerHTML = cosas
+        } 
+    </script>
+
+</body>
+
+</html>
