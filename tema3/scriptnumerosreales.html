@@ -9,12 +9,12 @@
 <body>
     <h1>Script números reales</h1>
     <label for="numero">Introduzca un número real</label><br>
-    <input type="text" id="numero" onkeypress="return event.charCode != 32">
+    <input type="number" id="numero">
     <button onclick="anadir()" id="anadir">Añadir</button>
     <button onclick="sumar()" id="sumar">Sumar</button>
     <button onclick="multiplicar()" id="multiplicar">Multiplicar</button>
-    <p id="array"></p>
-    <p id="resultado"></p>
+    <p>Cadena: <span id="array"></span></p>
+    <p>Resultado: <span id="resultado"></span></p>
     
 </body>
 </html>
