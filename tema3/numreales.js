@@ -34,8 +34,9 @@ function multiplicar() {
 
     else {
         function multArray(array) {
+            let mult = 1;
             for (let i = 0; i < array.length; i++) {
-                mult += array[i];
+                mult *= array[i];
             }
             return mult;
         }
