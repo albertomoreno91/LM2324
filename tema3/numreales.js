@@ -2,7 +2,7 @@ let numeros = []
 
 function anadir() {
     if (document.getElementById('numero').value == "")
-        alert('Intruduzca un número')
+        alert('Introduzca un número')
     else {
         numeros.push(parseFloat(document.getElementById('numero').value))
         document.getElementById('array').innerHTML = numeros.join(', ')
