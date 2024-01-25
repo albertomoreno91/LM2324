@@ -18,7 +18,7 @@
 
     <script>
         const cosas = ["Chetos", "Doritos", "Boca Bits", "Gublins", "Fritos"]
-        document.getElementById('array').innerHTML = cosas
+        document.getElementById('array').innerHTML = cosas.join(', ')
 
         function añadir() {
             if (document.getElementById('caja').value == "") {
@@ -27,25 +27,25 @@
 
             else {
                 cosas.push(document.getElementById('caja').value)
-                document.getElementById('array').innerHTML = cosas
+                document.getElementById('array').innerHTML = cosas.join(', ')
                 document.getElementById('caja').value = ""
             }
         }
 
         function sustraer() {
             cosas.pop()
-            document.getElementById('array').innerHTML = cosas
+            document.getElementById('array').innerHTML = cosas.join(', ')
         }
 
         function creciente() {
             cosas.sort()
-            document.getElementById('array').innerHTML = cosas
+            document.getElementById('array').innerHTML = cosas.join(', ')
         }
 
         function decreciente() {
             cosas.sort()
             cosas.reverse()
-            document.getElementById('array').innerHTML = cosas
+            document.getElementById('array').innerHTML = cosas.join(', ')
         } 
     </script>
 
