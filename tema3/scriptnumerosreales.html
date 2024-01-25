@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script array reales</title>
+    <script src="numreales.js"></script>
+</head>
+<body>
+    <h1>Script números reales</h1>
+    <label for="numero">Introduzca un número real</label><br>
+    <input type="text" id="numero" onkeypress="return event.charCode != 32">
+    <button onclick="anadir()" id="anadir">Añadir</button>
+    <button onclick="sumar()" id="sumar">Sumar</button>
+    <button onclick="multiplicar()" id="multiplicar">Multiplicar</button>
+    <p id="array"></p>
+    <p id="resultado"></p>
+    
+</body>
+</html>
