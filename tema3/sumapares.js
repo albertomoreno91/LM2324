@@ -24,5 +24,9 @@ function sumar() {
             return suma
         }
         document.getElementById('resultado').innerHTML = sumapares(array)
+        if (document.getElementById('resultado').innerHTML == 0) {
+            alert('Ningún número par encontrado en el array')
+            document.getElementById('resultado').innerHTML = ""
+        }
     }
 }
