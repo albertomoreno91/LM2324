@@ -30,3 +30,9 @@ function sumar() {
         }
     }
 }
+
+function reset() {
+    array = []
+    document.getElementById('cadena').innerHTML = array
+    document.getElementById('resultado').innerHTML = ""
+}
