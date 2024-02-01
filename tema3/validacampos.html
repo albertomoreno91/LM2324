@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valida campos</title>
+    <script src="validacampos.js"></script>
+</head>
+
+<body>
+    <form action="">
+        <label for="">Nombre: </label><input type="text" id="nombre" onkeypress="return event.charCode != 32"><br>
+        <label for="">Apellidos: </label><input type="text" id="apellidos" onkeypress="return event.charCode != 32"><br>
+        <label for="">Email: </label><input type="text" id="email" onkeypress="return event.charCode != 32"><br>
+        <label for="">Contraseña: </label><input type="password" id="password" onkeypress="return event.charCode != 32"><br>
+        <label for="">Acepta política de privacidad: </label><input type="checkbox" id="checkbox"><br>
+        <button type="submit" onclick="validar(document.getElementsByTagName('input'))">Enviar</button>
+    </form>
+</body>
+
+</html>
