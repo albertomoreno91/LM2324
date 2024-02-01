@@ -19,7 +19,7 @@ function sumar() {
             let suma = 0
             for (i = 0; i < numeros.length; i++) {
                 if (numeros[i] % 2 == 0)
-                    suma += array[i]
+                    suma += numeros[i]
             }
             return suma
         }
