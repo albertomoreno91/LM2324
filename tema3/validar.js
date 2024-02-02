@@ -20,6 +20,7 @@ function validar(elementos){
 function validarEmail(){              
 	var valido;
 	var emailField = document.getElementById('email');
+/*Lo siguiente es una expresión regular*/
 	var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
 	if( validEmail.test(emailField.value) ){
 		valido=true;
