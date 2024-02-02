@@ -2,7 +2,7 @@ function validar(elementos){
     let estanCorrectos = true;
     for (var i=0;i<elementos.length;i++){
         document.getElementById("campo"+(i+1).toString()).innerHTML = "";        
-        if (elementos[i].value == "" || (i==4 && !elementos[i].checked)){
+        if (elementos[i].value == "" || (i==5 && !elementos[i].checked)){
             document.getElementById("campo"+(i+1).toString()).innerHTML = "El campo " + elementos[i].id + " está vacío";
             estanCorrectos = false;
         }
