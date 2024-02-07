@@ -50,9 +50,10 @@ function validaPasswords(){
 
 function validarDNI(){
     var letra=['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'];
-    var cadena = document.getElementById("dni").value; // DNI Completo
-    var numero = parseInt(cadena.substring(0,8)); // Parte numérica
-    var letraUsuario = cadena[8]; // Letra escrita por el usuario
+    var cadena = document.getElementById("dni").value.toUpperCase(); // DNI Completo en mayúsculas
+    var cadena2 = cadena.replace(/\s+/g, ''); // Elimina los espacios en la cadena
+    var numero = parseInt(cadena2.substring(0,8)); // Parte numérica
+    var letraUsuario = cadena2[8]; // Letra escrita por el usuario
     var letraReal = letra[numero%23]; // Letra "real" del DNI calculada según "fórmula"
     var dniValido =true;
     if (letraUsuario!=letraReal) // Si no coincide letras es falso
