@@ -12,8 +12,8 @@ function anadir() {
 }
 
 function calcular() {
-    if (cadena.length == 0)
-        alert('Introduzca al menos una nota')
+    if (cadena.length < 2)
+        alert('Introduzca al menos dos notas')
     else {
         var suma = 0
         var media = 0
