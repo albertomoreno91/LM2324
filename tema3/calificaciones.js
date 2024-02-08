@@ -21,7 +21,7 @@ function calcular() {
             suma += cadena[i]
         }
         media = suma / cadena.length
-        document.getElementById('media').innerHTML = media
+        document.getElementById('media').innerHTML = media.toFixed(2)
     }
 }
 
