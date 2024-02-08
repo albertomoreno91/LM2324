@@ -12,13 +12,17 @@ function anadir() {
 }
 
 function calcular() {
-    var suma = 0
-    var media = 0
-    for (i = 0; i < cadena.length; i++) {
-        suma += cadena[i]
+    if (cadena.length == 0)
+        alert('Introduzca al menos una nota')
+    else {
+        var suma = 0
+        var media = 0
+        for (i = 0; i < cadena.length; i++) {
+            suma += cadena[i]
+        }
+        media = suma / cadena.length
+        document.getElementById('media').innerHTML = media
     }
-    media = suma / cadena.length
-    document.getElementById('media').innerHTML = media
 }
 
 function reset() {
