@@ -27,9 +27,11 @@
 <body>
     <div id="estilo">
         <h1>Encuentra el número mayor en una cadena</h1>
-        <input type="number" id="numero">
+        <input type="number" id="numero" placeholder="Introduce un número">
         <button type="button" onclick="anadir()">Añadir</button>
-        <button type="button" onclick="calcular()">Calcular</button>
+        <button type="button" onclick="calcular()">Calcular mayor</button>
+        <button type="button" onclick="calcularmenor()">Calcular menor</button>
+        <button type="button" onclick="imprimir()">Imprimir elementos</button>
         <button type="button" onclick="reset()">Resetear</button>
         <p>Cadena: <span id="cadena"></span></p>
         <p>El número más grande es: <span id="resultado"></span></p>
