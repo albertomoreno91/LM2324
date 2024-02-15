@@ -19,16 +19,16 @@
     <script>
         const cosas = ["Chetos", "Doritos", "Boca Bits", "Gublins", "Fritos"]
         document.getElementById('array').innerHTML = cosas.join(', ')
-
         function añadir() {
-            if (document.getElementById('caja').value == "") {
+            elemento = document.getElementById('caja').value
+            if (elemento == '') {
                 alert('Introduzca su snack favorito')
             }
 
             else {
-                cosas.push(document.getElementById('caja').value)
+                cosas.push(elemento)
                 document.getElementById('array').innerHTML = cosas.join(', ')
-                document.getElementById('caja').value = ""
+                elemento = ''
             }
         }
 
