@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar enlaces</title>
+    <style>
+        li {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Descargas dinámicas</h1>
+    <ul id="lista"></ul>
+    <script>
+        window.onload = generaEnlaces();
+        function generaEnlaces() {
+            var lista = document.getElementById('lista');
+            var pos = 0;
+            for (i = 0; i < 20; i++) {
+                var elemento = document.createElement('li');
+                elemento.innerHTML = "Fichero " + (pos + 1) + " <a href='ficheros/fichero" + (pos + 1) + ".pdf' target='blank'><img src='download.png' alt='botondescarga'></a>";
+                lista.appendChild(elemento);
+                pos++;
+            }
+        }
+    </script>
+</body>
+
+</html>
