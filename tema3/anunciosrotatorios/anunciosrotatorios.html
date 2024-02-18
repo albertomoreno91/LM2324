@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anuncios Rotatorios</title>
+</head>
+
+<body>
+    <h1>Anuncios rotatorios</h1>
+    <script>
+        var pos = 0
+        window.setInterval(rotarImagenes, 3000)
+        let cadenaImagenes = ['banner0', 'banner1', 'banner2', 'banner3', 'banner4', 'banner5']
+        let cadenaEnlaces = ['https://store.dsautomobiles.es/configurable', 'https://www.elcorteingles.es/supermercado/', 'https://www.elcorteingles.es/daitsu/electrodomesticos/aire-acondicionado/', 'https://www.madridhifi.com', 'https://launidad.movistarplus.es/?dis_c=331187589&dclid=CL-Lt9zx4_YCFdZEHQkdLpkExQ', 'https://www.tikamoon.es']
+        function rotarImagenes() {
+            if (pos == cadenaImagenes.length - 1) {
+                pos = 0
+                document.getElementById('images').src = cadenaImagenes[pos] + ".png"
+                document.getElementById('enlace').href = cadenaEnlaces[pos]
+            }
+            else {
+                pos += 1
+                document.getElementById('images').src = cadenaImagenes[pos] + ".png"
+                document.getElementById('enlace').href = cadenaEnlaces[pos]
+            }
+        }
+
+
+    </script>
+    <a href="https://store.dsautomobiles.es/configurable" target="blank" id="enlace"><img src="banner0.png"
+            alt="imagenes" id="images"></a>
+</body>
+
+</html>
