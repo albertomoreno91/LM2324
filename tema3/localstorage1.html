@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almacenamiento local</title>
+</head>
+
+<body>
+    <input type="text" placeholder="escribe algo" id="info"><br>
+    <button onclick="guardar()">Guardar</button>
+    <button onclick="borrar()">Borrar</button>
+    <script>
+        function cargaPagina() {
+            let valor = localStorage.getItem('informacion')
+            if (valor != null)
+                alert('Bienvenido ' + valor)
+
+        }
+
+        function guardar() {
+            let info = document.getElementById('info').value
+            let infons = info.replace(/\s+/g, '')
+            if (infons == "") {
+                alert('introduzca un nombre')
+            }
+            else {
+                localStorage.setItem('informacion', infons)
+            }
+        }
+        function borrar() {
+            localStorage.clear()
+        }
+        window.onload = cargaPagina()
+    </script>
+</body>
+
+</html>
