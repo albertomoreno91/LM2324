@@ -23,11 +23,11 @@
             lista.appendChild(nuevatarea)
             cadena.push(nuevatarea)
             document.getElementById('caja').value = ""
-            localStorage.setItem('listaTareas', lista)
+            localStorage.setItem('listaTareas', cadena)
         }
 
         function cargaPagina() {
-            
+
         }
 
         window.onload = cargaPagina()
