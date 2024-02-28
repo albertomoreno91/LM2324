@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista Tareas</title>
 </head>
-
 <body>
     <h1>Bienvenido a la lista de tus tareas</h1>
     <input type="text" id="tarea" placeholder="Escribe tu tarea">
@@ -15,7 +13,7 @@
     <button type="button" onclick="anadirElemento()">Añade problema a tu vida</button>
 
     <script>
-        var problemas = [];
+        var problemas=[];
         function anadirElemento() {
             var tarea = document.getElementById("tarea").value
             var lista = document.getElementById("lista");
@@ -23,31 +21,28 @@
             elemento.textContent = tarea; // Observa en la consola lista y lista.children
             lista.appendChild(elemento);
             problemas.push(elemento);
-            var cadena = "";
-            for (var i = 0; i < problemas.length; i++) {
+            var cadena="";
+            for (var i=0;i<problemas.length;i++){
                 cadena = cadena + problemas[i].textContent + ",";
             }
             // Al finalizar el for en cadena tengo mi lista de tareas
             localStorage.setItem("problemas", cadena);
         }
-        function cargarPagina() {
-            let cadenaTareas = localStorage.getItem("problemas");
-            if (cadenaTareas != null) {
+        function cargarPagina(){
+            let cadenaTareas = localStorage.getItem("problemas")
+            if (cadenaTareas!=null)
+            {
                 // Tengo tareas pendientes
+                var elemento = document.createElement("li");
                 var lista = document.getElementById("lista");
-                for (var i = 0; i < cadenaTareas.length; i++) {
-                    var elemento = document.createElement("li");
-                    elemento.textContent = cadenaTareas[i].textContent;
-                    lista.appendChild(elemento);
-                }
-
+                elemento.textContent = cadenaTareas;
+                lista.appendChild(elemento);
             }
-            else {
+            else{
                 // No tengo nada que mostrar
             }
         }
         window.onload = cargarPagina();
     </script>
 </body>
-
 </html>
