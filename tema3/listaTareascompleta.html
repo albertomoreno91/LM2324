@@ -21,7 +21,7 @@
             var elemento = document.createElement("li");
             elemento.textContent = tarea;
             lista.appendChild(elemento);
-            listaJSON = JSON.stringify(lista.innerHTML);
+            var listaJSON = JSON.stringify(lista.innerHTML);
             localStorage.setItem('listaGuardada', listaJSON);
         }
         function cargarPagina() {
