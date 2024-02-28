@@ -22,10 +22,13 @@
             elemento.textContent = tarea;
             lista.appendChild(elemento);
             listaJSON = JSON.stringify(lista.innerHTML);
-            localStorage.setItem('listaGuardada', listaJSON)
+            localStorage.setItem('listaGuardada', listaJSON);
         }
         function cargarPagina() {
-           let listaRecuperada = localStorage.getItem('listaGuardada')
+            let listaRecuperada = localStorage.getItem('listaGuardada')
+            if (listaRecuperada != null) {
+                lista.innerHTML = JSON.parse(listaRecuperada);
+            }
         }
         window.onload = cargarPagina();
     </script>
