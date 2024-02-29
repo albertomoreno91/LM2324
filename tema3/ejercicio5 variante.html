@@ -58,8 +58,11 @@
     }
     window.onload = function () {
       let preferenciasRecuperadas = localStorage.getItem('preferencias')
+      let preferenciasJSON = JSON.parse(preferenciasRecuperadas)
       if (preferenciasRecuperadas != null) {
-        document.getElementById('parrafo').style.fontSize = preferenciasRecuperadas.tamano
+        document.getElementById('parrafo').style.fontSize = preferenciasJSON.tamano + '%'
+        document.getElementById('parrafo').style.color = preferenciasJSON.color
+        document.getElementById('parrafo').style.fontFamily = preferenciasJSON.fuente
       }
     }
   </script>
