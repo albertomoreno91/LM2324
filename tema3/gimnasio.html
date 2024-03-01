@@ -17,11 +17,11 @@
             text-align: center;
             position: relative;
             background-color: aqua;
-            width: 40%;
-            height: 20vh;
+            width: 35%;
             margin: auto;
         }
-        #pesoregistrado{
+
+        #pesoregistrado {
             font-weight: bolder;
         }
     </style>
@@ -36,16 +36,19 @@
     </div>
     <script>
         function anadirPeso() {
-            let peso = document.getElementById('peso').value
-            if (peso == "" || peso < 0) {
+            let peso = parseFloat(document.getElementById('peso').value).toFixed(2)
+            let pesoRecuperado = localStorage.getItem('peso')
+            if (peso == 'NaN' || peso < 0) {
                 alert('Introduce una cantidad positiva')
             }
             else {
-                if (localStorage.getItem('peso') != null) {
-                    if (peso > localStorage.getItem('peso'))
+                if (pesoRecuperado != null) {
+                    if (peso > pesoRecuperado)
                         alert('Has ganado peso')
-                    if (peso < localStorage.getItem('peso'))
+                    if (peso < pesoRecuperado)
                         alert('Has perdido peso')
+                    if (peso == pesoRecuperado)
+                        alert('Estás igual')
 
                 }
                 document.getElementById('pesoregistrado').textContent = peso + ' Kg'
