@@ -32,18 +32,16 @@
     </tr>
   </table>
   <script type="text/javascript">
-    var tamano = 100 // TamaNo inicial
     var preferencias = {}
+    preferencias.tamano = 100 // TamaNo inicial
     function aumenta() {
-      tamano += 25;
-      document.getElementById('parrafo').style.fontSize = tamano + "%"; // aumentamos un 25% el tamaño
-      preferencias.tamano = tamano
+      preferencias.tamano += 25;
+      document.getElementById('parrafo').style.fontSize = preferencias.tamano + "%"; // aumentamos un 25% el tamaño
       localStorage.setItem('preferencias', JSON.stringify(preferencias))
     }
     function disminuye() {
-      tamano -= 25;
-      document.getElementById("parrafo").style.fontSize = tamano + "%"; //decrementamos un 25% el tamaño
-      preferencias.tamano = tamano
+      preferencias.tamano -= 25;
+      document.getElementById("parrafo").style.fontSize = preferencias.tamano + "%"; //decrementamos un 25% el tamaño
       localStorage.setItem('preferencias', JSON.stringify(preferencias))
     }
     function cambiarColor() {
@@ -59,6 +57,8 @@
     window.onload = function () {
       let preferenciasRecuperadas = localStorage.getItem('preferencias')
       let preferenciasJSON = JSON.parse(preferenciasRecuperadas)
+      if (preferenciasJSON)
+      preferencias = preferenciasJSON
       if (preferenciasRecuperadas != null) {
         document.getElementById('parrafo').style.fontSize = preferenciasJSON.tamano + '%'
         document.getElementById('parrafo').style.color = preferenciasJSON.color
