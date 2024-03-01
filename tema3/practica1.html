@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Báscula</title>
+    <style>
+        body {
+            background-image: url(https://generacionxbox.com/wp-content/uploads/2018/01/Terry-Crews-Is-Always-On1-1200x827.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .cajitaazul {
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            background-color: aqua;
+            width: 40%;
+            height: 20vh;
+            margin: auto;
+        }
+        #pesoregistrado{
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cajitaazul">
+        <h1>Introuduce tu peso actual:</h1>
+        <input type="number" id="peso"> <button type="button" onclick="anadirPeso()">Añadir</button>
+        <p>Tu último peso registrado es de: <span id="pesoregistrado"></span></p>
+        <p id="compara"></p>
+    </div>
+    <script>
+        function anadirPeso() {
+            let peso = document.getElementById('peso').value
+            if (peso == "" || peso < 0) {
+                alert('Introduce una cantidad positiva')
+            }
+            else {
+                if (localStorage.getItem('peso') != null) {
+                    if (peso > localStorage.getItem('peso'))
+                        alert('Has ganado peso')
+                    if (peso < localStorage.getItem('peso'))
+                        alert('Has perdido peso')
+
+                }
+                document.getElementById('pesoregistrado').textContent = peso + ' Kg'
+                localStorage.setItem('peso', peso)
+                document.getElementById('peso').value = ''
+            }
+
+        }
+        window.onload = function () {
+            pesoRecuperado = localStorage.getItem('peso')
+            if (pesoRecuperado) {
+                document.getElementById('pesoregistrado').textContent = pesoRecuperado + ' Kg'
+            }
+        }
+    </script>
+</body>
+
+</html>
