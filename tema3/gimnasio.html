@@ -37,7 +37,7 @@
     <script>
         function anadirPeso() {
             let peso = parseFloat(document.getElementById('peso').value).toFixed(2)
-            let pesoRecuperado = localStorage.getItem('peso')
+            let pesoRecuperado = parseFloat(localStorage.getItem('peso'))
             if (peso == 'NaN' || peso < 0) {
                 alert('Introduce una cantidad positiva')
             }
@@ -58,7 +58,7 @@
 
         }
         window.onload = function () {
-            pesoRecuperado = localStorage.getItem('peso')
+            let pesoRecuperado = parseFloat(localStorage.getItem('peso'))
             if (pesoRecuperado) {
                 document.getElementById('pesoregistrado').textContent = pesoRecuperado + ' Kg'
             }
