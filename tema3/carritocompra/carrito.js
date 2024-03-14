@@ -7,8 +7,8 @@ let carro = [
 let almacenado=null;
 function iniciar(){
     almacenado = localStorage.getItem("carro");
-    if (****************){ // Comprobamos si el carrito tenía algo almacenado 
-        almacenado = ****************; // Convertimos el texto almacenado en un objeto Javascript
+    if (almacenado != null){ // Comprobamos si el carrito tenía algo almacenado 
+        almacenado = JSON.parse(almacenado); // Convertimos el texto almacenado en un objeto Javascript
         carro = almacenado;
         refrescar();
     }
@@ -19,14 +19,14 @@ function anadir(producto){
      objeto['uds'] += 1; // Añado unidad
      carro[producto] = objeto;
      document.getElementById("id"+producto).value = objeto['uds'];
-     **************** // Almacenamos en localStorage el carro
+     localStorage.setItem("carro", JSON.stringify(carro)); // Almacenamos en localStorage el carro
      refrescar();
 }
 function quitar(producto){
     // En producto llevamos el identificador del producto a guardar en el carrito
     let objeto = carro[producto];
     let numuds = objeto['uds'];
-    if (****************){ // Comprobamos que el número de unidades sea al menos una
+    if (numuds >= 1){ // Comprobamos que el número de unidades sea al menos una
         objeto['uds'] -= 1; // Quito unidad
         carro[producto] = objeto;
         document.getElementById("id"+producto).value = objeto['uds'];
@@ -35,22 +35,22 @@ function quitar(producto){
     }
 }
 // Actualiza visualización carrito y almacenamiento local
-****************{
+function refrescar(){
     let listaCarrito = document.getElementById("carrito");
     let total=0;
     listaCarrito.innerHTML="";
-    **************** // Recorremos todos los elementos del carrito
+    for (var i = 0; i < carro.length; i++) // Recorremos todos los elementos del carrito
     {
         
         let producto = carro[i];
         if (producto['uds']>0){
-            let nodo = ****************; // Creamos un nuevo elemento lista
+            let nodo = document.createElement("li"); // Creamos un nuevo elemento lista
             let texto = document.createTextNode("Producto: " + producto['titulo']+" Unidades:"+producto['uds']+" Precio ud:"+producto['precio']);
             document.getElementById("id"+i).value = producto['uds'];
-            **************** // Añadimos el texto
+            nodo.innerText = texto.textContent; // Añadimos el texto
             listaCarrito.appendChild(nodo);
             total = total + producto['uds']*producto['precio'];
         }
     }
-    **************** // Escribimos el total
+    return total; // Escribimos el total
 }
