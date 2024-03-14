@@ -52,5 +52,5 @@ function refrescar(){
             total = total + producto['uds']*producto['precio'];
         }
     }
-    return total; // Escribimos el total
+    document.getElementById('datos').innerHTML = 'Total: ' + total.toFixed(2) + ' €'; // Escribimos el total
 }
