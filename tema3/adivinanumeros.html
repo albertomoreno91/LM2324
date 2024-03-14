@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el numero</title>
+</head>
+
+<body>
+    <h1>¡Adivina el número en tiempo récord!</h1>
+    <p>He pensado en un número de 3 cifras...</p>
+    <p id="prueba" style="display: none;"></p>
+    <p><input type="text" id="caja" style="display: none;"></p>
+    <button onclick="comenzar()" id="boton">Comenzar</button>
+    <button onclick="comprobar()" id="boton2" style="display: none;">Comprobar</button>
+
+    <script>
+        function comenzar() {
+            let cajaNumero = document.getElementById('caja');
+            document.getElementById('boton').style.display = 'none';
+            document.getElementById('prueba').style.display = 'block'
+            cajaNumero.style.display = 'block';
+            document.getElementById('boton2').style.display = 'block'
+            
+        }
+
+    </script>
+
+</body>
+
+</html>
