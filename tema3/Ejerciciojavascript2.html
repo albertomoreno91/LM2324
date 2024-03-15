@@ -16,16 +16,16 @@
     <p id="result"></p>
     <script>
         function convertirEuro() {
-            let a = parseFloat(document.getElementById('cant').value).toFixed(2)
-            if (a == 'NaN') {
+            let a = parseFloat(document.getElementById('cant').value)
+            if (isNaN(a)) {
                 alert('introduce un numero')
             }
             else
                 document.getElementById('result').innerHTML = (a * 0.91).toFixed(2) + " €"
         }
         function convertirDolar() {
-            let a = parseFloat(document.getElementById('cant').value).toFixed(2)
-            if (a == 'NaN') {
+            let a = parseFloat(document.getElementById('cant').value)
+            if (isNaN(a)) {
                 alert('introduce un numero')
             }
             else
