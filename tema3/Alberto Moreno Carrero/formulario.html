@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validar formulario</title>
     <script src="validarformulario.js"></script>
+    <style>
+        span {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,7 +20,11 @@
     <label for="password2">Repite contraseña:</label><input id="password2" type="password" name=""><span class="error"
         id="campo3"></span><br>
     <label for="dni">DNI:</label><input id="dni" type="text"><span class="error" id="campo4"></span><br>
-    <label for="checkbox">Marca si eres mayor de edad:</label><input type="checkbox" name="" id="checkbox"><br>
+    <label for="fecha">Fecha de nacimiento:</label><input type="date" name="" id="fecha"><span class="error" id="campo5"></span><br>
+    <label for="checkbox">Marca para confirmar que eres mayor de edad:</label><input type="checkbox" name="" id="checkbox"><span
+        class="error" id="campo6"></span><br>
+    <label for="checkstorage">Marca para guardar los cambios</label><input type="checkbox" name=""
+        id="checkstorage"><br>
     <button onclick="validar(document.getElementsByTagName('input'))">Validar</button>
 </body>
 
