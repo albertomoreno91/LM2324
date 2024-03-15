@@ -36,7 +36,7 @@
             fotos[4]="s4.jpg";
             function atras(){
                 if(indice!=0) { /* Si NO era la primera foto... */
-                    indice=indice-1;
+                    indice-=1;
                 }
                 else
                 {
@@ -51,7 +51,7 @@
                 }
                 else
                 {
-                    indice=indice+1;        
+                    indice+=1;        
                 }
                 document.getElementById("fotoActual").src = "s"+indice+".jpg" ; /* Ponemos el nombre del fichero */
             }
