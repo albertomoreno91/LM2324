@@ -1,4 +1,9 @@
 function validar(elementos) {
+    if (document.getElementById('checkstorage').checked) {
+        var formulario = document.getElementById('formulario')
+        var formularioJSON = JSON.stringify(formulario.innerHTML)
+        localStorage.setItem('formularioGuardado', formulario)
+    }
     let estanCorrectos = true;
     for (var i = 0; i < elementos.length; i++) {
         document.getElementById("campo" + (i + 1).toString()).innerHTML = "";
@@ -23,11 +28,6 @@ function validar(elementos) {
         estanCorrectos = false;
     }
 
-    if (document.getElementById('checkstorage').checked) {
-        var formulario = document.getElementById('formulario')
-        var formularioJSON = JSON.stringify(formulario)
-        localStorage.setItem('formularioGuardado', formulario)
-    }
     return estanCorrectos;
 }
 
@@ -64,4 +64,9 @@ function validarDNI() {
         dniValido = false;
     return dniValido;
 }
+ window.onload = function() {
+    var formularioRecuperado = JSON.parse(localStorage.getItem('formularioGuardado'))
+    if (formularioRecuperado != null)
+    document.getElementById('formulario').innerHTML = formularioRecuperado
+ }
 
