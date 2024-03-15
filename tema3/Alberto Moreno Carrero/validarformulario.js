@@ -22,39 +22,46 @@ function validar(elementos) {
         document.getElementById("campo4").innerHTML = "DNI no válido (12345678X)";
         estanCorrectos = false;
     }
+
+    if (document.getElementById('checkstorage').checked) {
+        var formulario = document.getElementById('formulario')
+        var formularioJSON = JSON.stringify(formulario)
+        localStorage.setItem('formularioGuardado', formulario)
+    }
     return estanCorrectos;
 }
 
-function validarEmail(){              
-	var valido;
-	var emailField = document.getElementById('email');
-	var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
-	if( validEmail.test(emailField.value) ){
-		valido=true;
-	}else{
-        valido=false;
-	}
+function validarEmail() {
+    var valido;
+    var emailField = document.getElementById('email');
+    var validEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+    if (validEmail.test(emailField.value)) {
+        valido = true;
+    } else {
+        valido = false;
+    }
     return valido;
-} 
+}
 
-function validaPasswords(){
+function validaPasswords() {
     let clave1 = document.getElementById("password1").value;
     let clave2 = document.getElementById("password2").value;
-    let passwordsOK = true; 
-    if (clave1.length<8 || (clave1!=clave2))
+    let passwordsOK = true;
+    if (clave1.length < 8 || (clave1 != clave2))
         passwordsOK = false;
     return passwordsOK;
 }
 
-function validarDNI(){
-    var letra=['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'];
-    var cadena = document.getElementById("dni").value.toUpperCase(); 
-    var cadena2 = cadena.replace(/\s+/g, ''); 
-    var numero = parseInt(cadena2.substring(0,8)); 
-    var letraUsuario = cadena2[8]; 
-    var letraReal = letra[numero%23];
-    var dniValido =true;
-    if (letraUsuario!=letraReal)
+function validarDNI() {
+    var letra = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'];
+    var cadena = document.getElementById("dni").value.toUpperCase();
+    var cadena2 = cadena.replace(/\s+/g, '');
+    var numero = parseInt(cadena2.substring(0, 8));
+    var letraUsuario = cadena2[8];
+    var letraReal = letra[numero % 23];
+    var dniValido = true;
+    if (letraUsuario != letraReal)
         dniValido = false;
     return dniValido;
 }
+
