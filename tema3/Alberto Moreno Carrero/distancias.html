@@ -12,17 +12,17 @@
     <input type="text" id="caja" onkeypress="return event.charCode != 32" placeholder="Introduzca distancias"> <button onclick="calcular()">Calcula</button>
     <script>
         function calcular() {
-            var valorCaja = document.getElementById('caja').value
-            var arraydecadena = valorCaja.split(',')
-            var suma = 0
+            var valorCaja = document.getElementById('caja').value;
+            var arraydecadena = valorCaja.split(',');
+            var suma = 0;
             for (var i = 0; i < arraydecadena.length; i++) {
-                suma += parseFloat(arraydecadena[i])
+                suma += parseFloat(arraydecadena[i]);
             }
             if (isNaN(suma)) {
-                alert('Introduzca solo números separados por comas')
+                alert('Introduzca solo números separados por comas');
             }
             else {
-                alert('La distancia total del viaje es de ' + suma + ' Km')
+                alert('La distancia total del viaje es de ' + suma + ' Km');
             }
         }
     </script>
