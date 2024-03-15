@@ -12,13 +12,13 @@
     <script>
         let i = 0;
         function cargaPagina() {
-            var valorRecuperado = localStorage.getItem('visitas')
+            var valorRecuperado = parseFloat(localStorage.getItem('visitas'))
             if (valorRecuperado) {
-                i = parseFloat(valorRecuperado)
+                i = valorRecuperado
             }
-            i += 1;
+            i ++;
             localStorage.setItem('visitas', i);
-            document.getElementById('cantidad').innerHTML = localStorage.getItem('visitas');
+            document.getElementById('cantidad').textContent = valorRecuperado;
         }
         window.onload = cargaPagina();
     </script>
