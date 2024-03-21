@@ -8,11 +8,28 @@
     <script src="jquery-3.7.1.js"></script>
     <script>
         $(document).ready(function () {
-            $('p, h1').click(function () {
+            $('p, h1').dblclick(function () {
                 $(this).hide();
             });
         });
+        $(document).ready(function () {
+            $('div').mouseenter(function () {
+                $('div p').hide();
+            });
+            $('div').mouseleave(function () {
+                $('div p').show();
+            });
+        });
     </script>
+    <style>
+        div {
+            padding: 30px;
+            background-color: aquamarine;
+            border: 2px solid black;
+            width: 30%;
+            height: 120px;
+        }
+    </style>
 </head>
 
 <body>
@@ -20,6 +37,12 @@
     <p>Parrafo de prueba</p>
     <p>Clica y desaparezco</p>
     <p>Pulsa sobre mí</p>
+
+    <div>
+        <p>parrafo en la caja</p>
+        <p>pararfo 2</p>
+        <p>parrafo de prueba</p>
+    </div>
 
 </body>
 
