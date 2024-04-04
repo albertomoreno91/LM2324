@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 8</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#src').click(function () {
+                let src = $('img').attr('src')
+                alert(src)
+            })
+            $('#htmlh').click(function () {
+             alert($('h1').html())
+            })
+            $('#htmlp').click(function () {
+                alert($('p').html())
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Encabezado de prueba</h1>
+    <p>Párrafo de prueba</p>
+    <img src="https://up.quizlet.com/35acwy-XgsAK-256s.png" alt="" style="display: block;">
+    <button id="src">Obtener scr de la imagen</button>
+    <button id="htmlh">Obtener html del encabezado</button>
+    <button id="htmlp">Obtener html del párrafo</button>
+
+</body>
+
+</html>
