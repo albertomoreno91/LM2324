@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<style>
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        document.getElementById('encabezados').innerHTML = $('h1').length
+        document.getElementById('parrafos').innerHTML = $('p').length
+        document.getElementById('images').innerHTML = $('img').length
+    });
+</script>
+
+<body>
+    <h1>Titulo 1</h1>
+    <h1>Titulo 2</h1>
+    <p>parrafo 1</p>
+    <p>parrafo 2</p>
+    <p>parrafo 3</p>
+    <p>parrafo 4</p>
+    <p>parrafo 5</p>
+    <img src="https://up.quizlet.com/35acwy-XgsAK-256s.png" alt="">
+    <img src="https://64.media.tumblr.com/avatar_0d485cad05d8_128.pnj" alt="">
+    <img src="https://linda.nyc3.cdn.digitaloceanspaces.com/370_npd_webp-m_45/sticker-fan_1906788_m.webp" alt="">
+    <table style="border-collapse: collapse; margin-top: 15px;">
+        <tr>
+            <th>Encabezados</th>
+            <th>Párrafos</th>
+            <th>Imágenes</th>
+        </tr>
+        <tr>
+            <td id="encabezados"></td>
+            <td id="parrafos"></td>
+            <td id="images"></td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>
