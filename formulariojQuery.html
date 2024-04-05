@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar Formulario</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        input {
+            outline: 2px solid blue;
+            margin: 5px;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" placeholder="Nombre" id="nombre" required> <span id="errornombre"></span><br>
+    <input type="text" placeholder="Apellidos" id="apellidos" required> <span id="errorapellidos"></span><br>
+    <input type="text" placeholder="Email" id="email" required> <span id="erroremail"></span><br>
+    <input type="date" name="" id="fnac"><br>
+    <input type="text" name="" id="dni" placeholder="DNI: 1233456789X" required> <span id="errordni"></span><br>
+    <input type="password" id="password1" placeholder="Contraseña" required> <span class="errorpass"></span><br>
+    <input type="password" id="password2" placeholder="Repite contraseña" required> <span class="errorpass"></span><br>
+    <input type="checkbox" name="" id="check">Acepta politica de privacidad<br>
+    <button type="button" id="boton">Registrarse</button>
+    <script>
+        $(document).ready(function () {
+            $('#dni').keyup(function () {
+                $(this).val($(this).val().toUpperCase())
+            })
+        });
+        $(document).ready(function () {
+            $('#boton').click(function () {
+                let nombre = $('#nombre').val();
+                let apellido = $('#apellidos').val();
+                let email = $('#email').val()
+                let dni = $('#dni').val()
+                let validEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/
+                let letra = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'];
+                let numero = parseInt(dni.substring(0, 8))
+                let letraUsuario = dni[8]
+                let letraReal = letra[numero % 23]
+                if (nombre == '')
+                    $('#errornombre').text('Rellenar el campo nombre')
+                else
+                    $('#errornombre').text('')
+
+                if (apellido == '')
+                    $('#errorapellidos').text('Rellenar el campo apellido')
+                else
+                    $('#errorapellidos').text('')
+                if (!validEmail.test(email))
+                    $('#erroremail').text('Introduce un email válido')
+                else
+                    $('#erroremail').text('')
+                if (letraUsuario != letraReal || dni == '')
+                    $('#errordni').text('Introduce un DNI válido')
+                else
+                    $('#errordni').text('')
+
+
+
+            })
+        });
+    </script>
+
+
+
+</body>
+
+</html>
