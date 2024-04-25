@@ -19,7 +19,7 @@
         /* Completar el código jQuery aquí */
         $(document).ready(function () {
           $.get('1.json', function(respuesta){
-            $('#objetivo').html(respuesta('nombre') + ' ' + respuesta('apellidos') + ' tiene el rol de ');
+            $('#objetivo').html(respuesta['nombre'] + ' ' + respuesta['apellidos'] + ' tiene el rol de ');
           })
         });
     </script>
