@@ -19,7 +19,12 @@
   <script>
     /* Completar el código jQuery aquí */
     $(document).ready(function () {
-      $.get('')
+      const url = `https://freeipapi.com/api/json`; // get current request's ip info
+      $.get(url, function (data) {
+        console.log(data);
+        $('#objetivo').html('Estás en la ciudad de: ' + data.cityName + '<br>'
+        + 'Con la IP: ' + data.ipAddress)
+      });
     });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
