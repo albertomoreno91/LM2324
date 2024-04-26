@@ -19,7 +19,7 @@
   <script>
     /* Completar el código jQuery aquí */
     $(document).ready(function () {
-      $.get('https://api.openweathermap.org/data/3.0/onecall?lat=37.39&lon=-05.97&units=metric&lang=es&appid=0cd2a146508b445dbcc57aa1463d18ed', function (respuesta) {
+      $.get('https://api.openweathermap.org/data/3.0/onecall?lat=37.39&lon=-05.97&units=metric&lang=es&appid=***', function (respuesta) {
        $('#objetivo').html(respuesta.current.temp + ' ºC' + ' Zona horaria: ' + respuesta.timezone)
       })
     });
