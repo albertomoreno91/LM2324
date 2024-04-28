@@ -1,5 +1,6 @@
 {
     "nombre": "José Luis",
     "apellidos": "Núñez",
-    "edad": 22
+    "edad": 22,
+    "rol": "Administrador"
 }
