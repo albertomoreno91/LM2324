@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="jquery-ui-1.13.3/jquery-ui.js"></script>
+    <link rel="stylesheet" href="jquery-ui-1.13.3/jquery-ui.css">
+    <style>
+        .no-close .ui-dialog-titlebar-close {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="https://i.pinimg.com/originals/49/0c/f2/490cf260ed7d1d05efdb1449dc90b76a.jpg"
+        alt="" id="image" style="display: none; width: 1000px; height: auto;">
+    <h1>Encabezado de prueba</h1>
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, dolore. Accusamus debitis beatae modi ullam
+        dicta asperiores ipsam placeat quis odio voluptatibus, sit provident quidem. Debitis asperiores dicta
+        repellendus rem.</h2>
+    <p class="prueba">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium blanditiis in itaque odit ut
+        dolor,
+        inventore, nihil vero molestiae suscipit nemo dolore, ullam debitis magni labore necessitatibus perspiciatis ea
+        architecto?</p>
+
+    <button id="opener">open the dialog</button>
+    <div id="dialog" title="Dialog Title">
+        <p>Virusaco que te crió</p>
+        <button id="boton">Pulsa para borrarlo todo</button>
+    </div>
+
+    <script>
+        $("#dialog").dialog({ autoOpen: false, modal: true, draggable: false, dialogClass: 'no-close' });
+        $("#opener").click(function () {
+            $("#dialog").dialog("open");
+        });
+        $(document).ready(function () {
+            $('#boton').click(function () {
+                $('h1, h2, .prueba, #opener').hide()
+                $("#dialog").dialog("close")
+                $('#image').show()
+            })
+        });
+    </script>
+
+    <script>
+        $("#tabs").tabs();
+    </script>
+
+</body>
+
+</html>
