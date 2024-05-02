@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú JQueryUI</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../jquery-ui-1.13.3/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../jquery-ui-1.13.3/jquery-ui.css">
+    <script>
+        $(function () {
+            $("#menu").menu();
+        });
+    </script>
+    <style>
+        .ui-menu {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="menu">
+        <li>
+            <div><span class="ui-icon-folder-open"></span>Abrir carpeta</div>
+        </li>
+        <li>
+            <div><span class="ui-icon-document"></span>Nuevo archivo</div>
+        </li>
+        <li>
+            <div><span class="ui-icon-disk"></span>Guardar</div>
+        </li>
+        <li>
+            <div><span class="ui-icon-mail-closed"></span>Enviar correo</div>
+        </li>
+        <li class="ui-state-disabled">
+            <div><span class="ui-icon ui-icon-print"></span>Imprimir</div>
+        </li>
+        <li>
+            <div><span class="ui-icon-power"></span>Cerrar sesión</div>
+        </li>
+
+</body>
+
+</html>
