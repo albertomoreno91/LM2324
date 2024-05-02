@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,21 +8,25 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alexandria">
     <title>Visualizador libros</title>
     <!-- Aquí añadimos el código para poder trabajar con jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
         body {
             font-family: 'Alexandria', sans-serif;
         }
-        h1{
+
+        h1 {
             font-size: xx-large;
             text-align: center;
             margin: 0 auto;
         }
+
         .contenedor {
             display: flex;
-            flex-wrap:wrap;
+            flex-wrap: wrap;
             flex-direction: column;
-           
+
         }
+
         .formulario {
             width: 80%;
             height: 100vh;
@@ -32,17 +37,21 @@
             border-radius: 10px;
             padding: 50px;
             box-shadow: 10px 10px 10px #7c7e8b;
-            overflow:auto;
+            overflow: auto;
         }
-        .formulario > * {
+
+        .formulario>* {
             margin: 10px;
             padding: 10px;
         }
-        input, label {
+
+        input,
+        label {
             font-size: 1.5em;
         }
+
         button {
-            background-color:#091661;
+            background-color: #091661;
             font-size: x-large;
             height: 60px;
             width: 25%;
@@ -51,9 +60,9 @@
             margin-left: 2%;
             margin-top: 1%;
         }
-       
     </style>
 </head>
+
 <body>
     <div class="contenedor">
         <div class="formulario">
@@ -66,11 +75,40 @@
             <button id="btn-todos">Ver todos</button>
             <div id="resultados">
                 <!-- Aqui cargaremos los resultados-->
+                <p id="titulo"></p>
+                <p id="autor"></p>
+                <img id="image" src=""></img>
+                <p id="nomenlace"><a href="" id="enlace" target="_blank"></a></p>
+                <p id="ndescargas"></p>
             </div>
         </div>
     </div>
     <script>
+
+        $(document).ready(function () {
+            $('#btn-libro').click(function () {
+                let idlibro = $('#codLibro').val();
+                $.get('https://gutendex.com/books/?ids=' + idlibro, function (data, status) {
+                    console.log(data);
+                    console.log(status);
+                    if (status == 'success') {
+                        $('#titulo').text('Título: ' + data.results[0].title)
+                        $('#autor').text('Autor: ' + data.results[0].authors[0].name)
+                        $('#image').attr('src', data.results[0].formats['image/jpeg'])
+                        $('nomenlace').text('Enlace: ')
+                        $('#enlace').attr('href', data.results[0].formats["text/plain; charset=us-ascii"]).text('Enlace de descarga')
+                        $('#ndescargas').text('Número de veces descargado: ' + data.results[0].download_count)
+
+                    }
+                    else { alert('La petición al servidor ha fallado') }
+
+
+
+                })
+            })
+        });
         /* Aqui desarrollamos el código necesario */
     </script>
 </body>
+
 </html>
