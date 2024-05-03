@@ -78,7 +78,7 @@
                 <p id="titulo"></p>
                 <p id="autor"></p>
                 <img id="image" src=""></img>
-                <p id="nomenlace"><a href="" id="enlace" target="_blank"></a></p>
+                <p><a href="" id="enlace" target="_blank"></a></p>
                 <p id="ndescargas"></p>
             </div>
         </div>
@@ -88,23 +88,25 @@
         $(document).ready(function () {
             $('#btn-libro').click(function () {
                 let idlibro = $('#codLibro').val();
-                $.get('https://gutendex.com/books/?ids=' + idlibro, function (data, status) {
-                    console.log(data);
-                    console.log(status);
-                    if (status == 'success') {
-                        $('#titulo').text('Título: ' + data.results[0].title)
-                        $('#autor').text('Autor: ' + data.results[0].authors[0].name)
-                        $('#image').attr('src', data.results[0].formats['image/jpeg'])
-                        $('nomenlace').text('Enlace: ')
-                        $('#enlace').attr('href', data.results[0].formats["text/plain; charset=us-ascii"]).text('Enlace de descarga')
-                        $('#ndescargas').text('Número de veces descargado: ' + data.results[0].download_count)
+                if (idlibro == "") { alert('Introduzca un número de identificación') }
+                else {
+                    $.get('https://gutendex.com/books/?ids=' + idlibro, function (data, status) {
+                        console.log(data);
+                        console.log(status);
+                        if (status == 'success') {
+                            $('#titulo').text('Título: ' + data.results[0].title)
+                            $('#autor').text('Autor: ' + data.results[0].authors[0].name)
+                            $('#image').attr('src', data.results[0].formats['image/jpeg'])
+                            $('#enlace').attr('href', data.results[0].formats["text/plain; charset=us-ascii"]).text('Enlace de descarga')
+                            $('#ndescargas').text('Número de veces descargado: ' + data.results[0].download_count)
 
-                    }
-                    else { alert('La petición al servidor ha fallado') }
+                        }
+                        else { alert('La petición al servidor ha fallado') }
 
 
 
-                })
+                    })
+                }
             })
         });
         /* Aqui desarrollamos el código necesario */
