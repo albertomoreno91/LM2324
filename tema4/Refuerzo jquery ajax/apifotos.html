@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Fotos</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {background-size: cover;}
+    </style>
+</head>
+
+<body>
+    <img src="" alt="" id="picture">
+    <script>
+        $(document).ready(function () {
+            $.get('https://api.unsplash.com/photos/random/?client_id=lRtWIuk3pUcoQ84PH2e8v1gJXgXmPlouAN0PjKFsYYI', function (data, status) {
+                console.log(data);
+                if (status == 'success') {
+                    //$('#picture').attr('src', data.urls.full)
+                   $('body').css('background-image', 'url(' + data.urls.full + ')').css('background-size', 'cover')
+                }
+            })
+        });
+    </script>
+
+</body>
+
+</html>

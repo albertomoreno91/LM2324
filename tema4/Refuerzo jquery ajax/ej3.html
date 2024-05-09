@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMDb API</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #cajaprinc {
+            margin: auto;
+            margin-top: 20px;
+            width: 60%;
+            height: 80vh;
+            border: 2px solid black;
+            background-color: aquamarine;
+            text-align: center;
+        }
+
+        #cajasecun {
+            visibility: hidden;
+            font-weight: bold;
+            background-color: brown;
+            margin: 30px;
+            padding: 30px;
+        }
+
+        body {
+            background-color: beige;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cajaprinc">
+        <p>Introduce el titulo de la pelicula: <input type="text" id="input">
+            <button id="boton">Buscar</button>
+        </p>
+        <div id="cajasecun">
+            <p id="titulo"></p>
+            <p id="year"></p>
+            <p id="director"></p>
+
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#boton').click(function () {
+                let titulo = $('#input').val();
+                if (titulo == "") { alert('Introduzca un titulo') }
+                else {
+                    $.get('http://www.omdbapi.com/?apikey=db6d1cd0&t=' + titulo, function (data, status) {
+                        console.log(data);
+                        if (status == 'success') {
+                            $('#titulo').text('Titulo: ')
+                            $('#year').text('Año: ')
+                            $('#director').text('Director: ')
+
+                        }
+                    })
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>
