@@ -18,10 +18,13 @@
         }
 
         #cajasecun {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 22px;
             visibility: hidden;
-            font-weight: bold;
             background-color: brown;
-            margin: 30px;
+            margin-top: 40px;
+            margin-left: 300px;
+            margin-right: 300px;
             padding: 30px;
         }
 
@@ -51,11 +54,19 @@
                 else {
                     $.get('http://www.omdbapi.com/?apikey=db6d1cd0&t=' + titulo, function (data, status) {
                         console.log(data);
-                        if (status == 'success') {
-                            $('#titulo').text('Titulo: ')
-                            $('#year').text('Año: ')
-                            $('#director').text('Director: ')
+                        console.log(status);
+                        if (data.Response == 'False') {
+                            $('#cajasecun').css('visibility', 'visible');
+                            $('#titulo').text(data.Error)
+                        }
+                        else {
+                            if (status == 'success') {
+                                $('#cajasecun').css('visibility', 'visible');
+                                $('#titulo').text('Titulo: ' + data.Title)
+                                $('#year').text('Año: ' + data.Year)
+                                $('#director').text('Director: ' + data.Director)
 
+                            }
                         }
                     })
                 }
