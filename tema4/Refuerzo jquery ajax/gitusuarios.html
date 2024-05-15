@@ -32,19 +32,28 @@
         <div id="cajasecun">
             <p>Introduce un usuario: <input type="text" id="cajatexto"> <button id="boton">Buscar</button></p>
             <p id="usua"></p>
-            <p id="dato1" class="remove"></p>
-            <p id="dato2" class="remove"></p>
-            <p class="remove"><a href="" id="enlace" target="_blank" class="remove"></a></p>
+            <p id="dato1" class="remove"
+                style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+            </p>
+            <p id="dato3" class="remove"
+                style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: larger;"></p>
+            <p id="dato2" class="remove"
+                style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+            </p>
+            <p class="remove"><a href="" id="enlace" target="_blank" class="remove"
+                    style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"></a>
+            </p>
         </div>
     </div>
     <script>
         $(document).ready(function () {
             $('#boton').click(function () {
                 let usuario = $('#cajatexto').val();
-                if (usuario == '')
+                let usuario2 = usuario.replace(/\s/g, '');
+                if (usuario2 == '')
                     alert('Introduzca un nombre de usuario')
                 else {
-                    $.get('https://api.github.com/users/' + usuario, function (data, status) {
+                    $.get('https://api.github.com/users/' + usuario2, function (data, status) {
                         console.log(data);
                         console.log(status);
                         $('#usua').css({ 'color': 'black', 'font-size': 'medium' })
@@ -52,6 +61,10 @@
                         $('#dato1').html('Avatar: ' + '<img style="height: 200px; width: 200px;" src="' + data.avatar_url + '">');
                         $('#dato2').text('Fecha de creación: ' + data.created_at);
                         $('#enlace').attr('href', data.html_url).text('Enlace al perfil')
+                        if (data.bio == null)
+                            $('#dato3').text('Bio: Biografía no encontrada')
+                        else
+                            $('#dato3').text('Bio: ' + data.bio)
                     }).fail(function () {
                         $('.remove').html('')
                         $('#usua').css({ 'color': 'red', 'font-size': 'larger' }).text('Usuario no encontrado')
