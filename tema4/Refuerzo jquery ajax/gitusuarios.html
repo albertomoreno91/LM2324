@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios de Git</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #caja {
+            width: 50%;
+            height: auto;
+            background-color: wheat;
+            border: 2px solid black;
+            margin: 0;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        #cajasecun {
+            margin: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="caja">
+        <div id="cajasecun">
+            <p>Introduce un usuario: <input type="text" id="cajatexto"> <button id="boton">Buscar</button></p>
+            <p id="usua"></p>
+            <p id="dato1"></p>
+            <p id="dato2"></p>
+            <p><a href="" id="enlace" target="_blank"></a></p>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#boton').click(function () {
+                let usuario = $('#cajatexto').val();
+                if (usuario == '')
+                    alert('Introduzca un nombre de usuario')
+                else {
+                    $.get('https://api.github.com/users/' + usuario, function (data, status) {
+                        console.log(data);
+                        $('#usua').text('Nombre de usuario: ' + data.name);
+                        $('#dato1').html('Avatar: ' + '<img style="height: 200px; width: 200px;" src="' + data.avatar_url + '">');
+                        $('#dato2').text('Fecha de creación: ' + data.created_at);
+                        $('#enlace').attr('href', data.html_url).text('Enlace al perfil')
+                    })
+                }
+
+            })
+        });
+    </script>
+
+</body>
+
+</html>
