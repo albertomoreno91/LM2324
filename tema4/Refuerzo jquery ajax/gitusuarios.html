@@ -58,7 +58,7 @@
                         console.log(status);
                         $('#usua').css({ 'color': 'black', 'font-size': 'medium' })
                         $('#usua').text('Nombre de usuario: ' + data.name);
-                        $('#dato1').html('Avatar: ' + '<img style="height: 200px; width: 200px;" src="' + data.avatar_url + '">');
+                        $('#dato1').html('Avatar: <img style="height: 200px; width: 200px;" src="' + data.avatar_url + '">');
                         $('#dato2').text('Fecha de creación: ' + data.created_at);
                         $('#enlace').attr('href', data.html_url).text('Enlace al perfil')
                         if (data.bio == null)
