@@ -67,19 +67,34 @@
     <div class="container">
         <form action="">
             <label for="fecha">Día de la reserva:</label>
-            <br><input type="text" name="fecha" id="fecha" required>
+            <br><input type="text" name="fecha" id="fecha" readonly="readonly">
             <br>
             <fieldset>
                 <legend>Seleccione carritos: </legend>
                 <label for="checkbox-1">Carrito 1</label>
                 <input class="carrito" type="checkbox" name="opciones" id="checkbox-1">
                 <!-- Código a completar-->
+                <label for="checkbox-2">Carrito 2</label>
+                <input class="carrito" type="checkbox" name="opciones" id="checkbox-2">
+                <label for="checkbox-3">Carrito 3</label>
+                <input class="carrito" type="checkbox" name="opciones" id="checkbox-3">
+                <label for="checkbox-4">Carrito 4</label>
+                <input class="carrito" type="checkbox" name="opciones" id="checkbox-4">
+                <label for="checkbox-5">Carrito 5</label>
+                <input class="carrito" type="checkbox" name="opciones" id="checkbox-5">
+                <label for="checkbox-6">Carrito 6</label>
+                <input class="carrito" type="checkbox" name="opciones" id="checkbox-6">
             </fieldset>
             <label for="hora">Hora:</label>
             <br>
             <select id="hora" name="hora">
                 <option value="8:00 - 9:00">8:00 - 9:00</option>
                 <!-- Código a completar-->
+                <option value="9:00 - 10:00">9:00 - 10:00</option>
+                <option value="10:00 - 11:00">10:00 - 11:00</option>
+                <option value="11:30 - 12:30">11:30 - 12:30</option>
+                <option value="12:30 - 13:30">12:30 - 13:30</option>
+                <option value="13:30 - 14:30">13:30 - 14:30</option>
 
             </select>
             <br>
@@ -89,8 +104,55 @@
             <p id="totalPortatiles">Nº Portátiles: </p>
         </form>
     </div>
-
     <!-- Código a completar-->
+    <script>
+        $.datepicker.regional['es'] = {
+            closeText: 'Cerrar',
+            prevText: '< Ant',
+            nextText: 'Sig >',
+            currentText: 'Hoy',
+            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+            dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+            weekHeader: 'Sm',
+            dateFormat: 'dd/mm/yy',
+            firstDay: 1,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: ''
+        };
+
+        $.datepicker.setDefaults($.datepicker.regional['es']);
+        $(function () {
+            $("#fecha").datepicker({ maxDate: '+2w', minDate: '0', beforeShowDay: my_check });
+        });
+
+        function my_check(in_date) {
+            if (in_date.getDay() == 0 || in_date.getDay() == 6) {
+                return [false, "notav", 'Not Available'];
+            } else {
+                return [true, "av", "available"];
+            }
+        }
+
+        $(document).ready(function () {
+            $('#reserva').click(function (event) {
+                event.preventDefault();
+                let fecha = $('#fecha').val();
+                let hora = $('#hora').val();
+                if (fecha == '')
+                    alert('Introduce una fecha')
+                else {
+                    var checkedCount = $('.carrito:checked').length;
+                    $('#totalPortatiles').text('Nº Portátiles: ' + (checkedCount * 15))
+                    $('#diaReserva').text('Reserva el ' + fecha + ' de ' + hora + ' horas')
+
+                }
+            })
+        });
+    </script>
 
 </body>
 
