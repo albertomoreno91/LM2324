@@ -96,10 +96,11 @@
                     else {
                         $.get('https://fakestoreapi.com/products/category/' + texto, function (data, status) {
                             console.log(data);
-                            for (let i = 0; i < data.length; i++)
+                            for (let i = 0; i < data.length; i++) {
                                 $('#resultados').append('<img width= 200px; height= 200px; src="' + data[i].image + '">'
                                     + '<br><p>Titulo: ' + data[i].title + '</p><br><p>Categoría: ' + data[i].category + '</p><br><p>Puntuación: ' + data[i].rating.rate + '</p><br><p>Descripción: '
                                     + data[i].description + '</p><br><p>Precio: ' + data[i].price + '</p><br>')
+                            }
                         })
                     }
                 })
