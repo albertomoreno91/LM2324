@@ -95,11 +95,11 @@
                 console.log(data);
                 $('#categoria').autocomplete({ source: data })
                 $('#btn-todos').click(function () {
-                    $('#resultados').empty().removeClass('rojo');
                     let texto = $('#categoria').val();
                     if (texto == '')
                         alert('Introduzca una categoría')
                     else {
+                        $('#resultados').empty().removeClass('rojo');
                         $.get('https://fakestoreapi.com/products/category/' + texto, function (data, status) {
                             console.log(data);
                             if (data.length == 0) {
