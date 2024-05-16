@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="../jquery-ui-1.13.3/jquery-ui.css">
     <title>Fake Store API</title>
     <style>
+        .rojo {
+            color: red;
+            font-size: larger;
+            font-style: italic;
+        }
+
         body {
             font-family: 'Alexandria', sans-serif;
         }
@@ -89,13 +95,16 @@
                 console.log(data);
                 $('#categoria').autocomplete({ source: data })
                 $('#btn-todos').click(function () {
-                    $('#resultados').empty();
+                    $('#resultados').empty().removeClass('rojo');
                     let texto = $('#categoria').val();
                     if (texto == '')
                         alert('Introduzca una categoría')
                     else {
                         $.get('https://fakestoreapi.com/products/category/' + texto, function (data, status) {
                             console.log(data);
+                            if (data.length == 0) {
+                                $('#resultados').append('Ningún resultado encontrado').addClass('rojo')
+                            }
                             for (let i = 0; i < data.length; i++) {
                                 $('#resultados').append('<img width= 200px; height= 200px; src="' + data[i].image + '">'
                                     + '<br><p>Titulo: ' + data[i].title + '</p><br><p>Categoría: ' + data[i].category + '</p><br><p>Puntuación: ' + data[i].rating.rate + '</p><br><p>Descripción: '
