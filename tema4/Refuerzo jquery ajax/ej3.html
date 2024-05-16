@@ -46,6 +46,7 @@
             <p id="director"></p>
             <p id="actores"></p>
             <p id="recaudacion"></p>
+            <p><img src="" alt="" id="poster"></p>
 
         </div>
     </div>
@@ -65,11 +66,12 @@
                         else {
                             if (status == 'success') {
                                 $('#cajasecun').css('visibility', 'visible');
-                                $('#titulo').text('Titulo: ' + data.Title)
-                                $('#year').text('Año: ' + data.Year)
-                                $('#director').text('Director: ' + data.Director)
-                                $('#actores').text('Actores: ' + data.Actors)
-                                $('#recaudacion').text('Recaudación: ' + data.BoxOffice)
+                                $('#titulo').text('Titulo: ' + data.Title);
+                                $('#year').text('Año: ' + data.Year);
+                                $('#director').text('Director: ' + data.Director);
+                                $('#actores').text('Actores: ' + data.Actors);
+                                $('#recaudacion').text('Recaudación: ' + data.BoxOffice);
+                                $('#poster').attr('src', data.Poster);
 
                             }
                         }
