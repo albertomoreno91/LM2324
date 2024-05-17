@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../jquery-ui-1.13.3/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../jquery-ui-1.13.3/jquery-ui.css">
+    <title>Fake Store API</title>
+    <style>
+        .rojo {
+            color: red;
+            font-size: larger;
+            font-style: italic;
+        }
+
+        body {
+            font-family: 'Alexandria', sans-serif;
+        }
+
+        h1 {
+            font-size: xx-large;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        .formulario {
+            width: 80%;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            margin: 50px auto;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            padding: 50px;
+            box-shadow: 10px 10px 10px #7c7e8b;
+            overflow: auto;
+            border: 1px dashed black;
+
+        }
+
+        .formulario>* {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        input,
+        label {
+            font-size: 1.5em;
+        }
+
+        button {
+            background-color: #373841;
+            font-size: x-large;
+            height: 60px;
+            width: 25%;
+            border-radius: 20px;
+            color: white;
+            margin-left: 2%;
+            margin-top: 1%;
+        }
+
+        button:hover {
+            background-color: #545662;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="formulario">
+            <h1>Fake Store API</h1>
+            <label for="codProducto">Categoría</label>
+            <input type="text" name="categoria" id="categoria">
+            <br>
+            <label for="botones">Acción:</label>
+            <button id="btn-todos">Ver</button>
+            <div id="resultados">
+                <!-- Aqui cargaremos los resultados-->
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $.get('https://fakestoreapi.com/products/categories', function (data, status) {
+                console.log(data);
+                $('#categoria').autocomplete({ source: data })
+                $('#btn-todos').click(function () {
+                    let texto = $('#categoria').val();
+                    if (texto == '')
+                        alert('Introduzca una categoría')
+                    else {
+                        $('#resultados').empty().removeClass('rojo');
+                        $.get('https://fakestoreapi.com/products/category/' + texto, function (data, status) {
+                            console.log(data);
+                            if (data.length == 0) {
+                                alert('Error cargando datos del servidor');
+                                $('#resultados').append('Ningún resultado encontrado').addClass('rojo');
+                            }
+                            for (let i = 0; i < data.length; i++) {
+                                $('#resultados').append('<img width= 200px; height= 200px; src="' + data[i].image + '">'
+                                    + '<br><p>Titulo: ' + data[i].title + '</p><br><p>Categoría: ' + data[i].category + '</p><br><p>Puntuación: ' + data[i].rating.rate + '</p><br><p>Descripción: '
+                                    + data[i].description + '</p><br><p>Precio: ' + data[i].price + '</p><br>')
+                            }
+                        })
+                    }
+                })
+            })
+        })
+
+    </script>
+
+</body>
+
+</html>

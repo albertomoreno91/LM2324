@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polución del aire</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .cajaverde {
+            background-color: green;
+            font-weight: bolder;
+            padding: 20px;
+        }
+
+        .cajaamarilla {
+            background-color: yellow;
+            font-weight: bolder;
+            padding: 20px;
+        }
+
+        .cajanaranja {
+            background-color: orangered;
+            font-weight: bolder;
+            padding: 20px;
+        }
+
+        .cajamorada {
+            background-color: purple;
+            font-weight: bolder;
+            padding: 20px;
+        }
+
+        .cajaroja {
+            background-color: red;
+            font-weight: bolder;
+            padding: 20px;
+        }
+
+        .normal {
+            font-weight: normal;
+        }
+
+        .verticalalign {
+            vertical-align: sub;
+        }
+
+        .texttop {
+            vertical-align: text-top;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Air Pollution API</h1>
+    <p>Introduce la latitud:</p>
+    <input type="number" id="lat">
+    <p>Introduce la longitud:</p>
+    <input type="number" id="lon">
+    <p><input type="button" value="Enviar" id="boton"></p>
+    <div id="resultado"></div>
+
+    <script>
+        $(document).ready(function () {
+            $('#boton').click(function () {
+                let lat = $('#lat').val()
+                let lon = $('#lon').val()
+                if (lat == '' || lon == '') {
+                    $('#resultado').text('Por favor, rellene los dos campos').removeClass('cajaverde cajaamarilla cajanaranja cajamorada cajaroja')
+                }
+                else {
+                    $.get('http://api.openweathermap.org/data/2.5/air_pollution?lat=' + lat + '&lon=' + lon + '&appid=0cd2a146508b445dbcc57aa1463d18ed', function (data, status) {
+                        console.log(data);
+                        let calidadAire = data.list[0].main.aqi
+                        if (calidadAire == 1) {
+                            calidadAire = 'Buena';
+                            $('#resultado').addClass('cajaverde')
+                        }
+                        if (calidadAire == 2) {
+                            calidadAire = 'Suficiente';
+                            $('#resultado').addClass('cajaamarilla')
+                        }
+                        if (calidadAire == 3) {
+                            calidadAire = 'Moderada';
+                            $('#resultado').addClass('cajanaranja')
+                        }
+                        if (calidadAire == 4) {
+                            calidadAire = 'Pobre';
+                            $('#resultado').addClass('cajamorada')
+                        };
+
+                        if (calidadAire == 5) {
+                            calidadAire = 'Muy pobre';
+                            $('#resultado').addClass('cajaroja')
+                        }
+
+                        $('#resultado').html('<p>Calidad del aire: <span class="normal">' + calidadAire + '</span></p><p>Cantidad de monóxido de carbono (CO): <span class="normal">' + data.list[0].components.co
+                            + ' μg/m3</span></p><p>Cantidad dióxido de azufre (SO<span class="verticalalign">2</span>): <span class="normal">' + data.list[0].components.so2 +
+                            ' μg/m3</span></p><p>Cantidad particulas finas(PM<span class="verticalalign">2.5</span>): <span class="normal">' +
+                            data.list[0].components.pm2_5 + ' μg/m3</span></p>')
+                    }).fail(function () {
+                        $('#resultado').removeClass('cajaverde cajaamarilla cajanaranja cajamorada cajaroja').text('Error de AJAX')
+                    })
+                }
+            })
+
+        });
+    </script>
+
+</body>
+
+</html>
